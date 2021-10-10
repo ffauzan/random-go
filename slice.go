@@ -62,4 +62,28 @@ func main() {
 	fmt.Println(slice3)
 	fmt.Println(months)
 
+	// Create new slice
+	newSlice := make([]string, 4, 5)
+
+	newSlice[0] = "zero"
+	newSlice[1] = "one"
+
+	fmt.Println(newSlice)
+	fmt.Println(len(newSlice))
+	fmt.Println(cap(newSlice))
+
+	// Copy slice
+	copySlice := make([]string, len(newSlice), cap(newSlice))
+	copy(copySlice, newSlice)
+
+	fmt.Println(copySlice)
+
+	// Array vs Slice declaration
+	thisArray := [...]int{1, 2, 3, 4}
+	thisSlice := []int{1, 2, 3, 4, 5}
+
+	fmt.Println(thisArray)
+
+	fmt.Println(len(thisSlice))
+	fmt.Println(cap(thisSlice))
 }
